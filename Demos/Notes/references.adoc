@@ -1,0 +1,27 @@
+= References
+
+* *Tower CLI Config*: https://github.com/aditosoftware/ansible-tower-cli/blob/master/tower_cli.cfg
++
+[source,bash]
+----
+# User options (set with `tower-cli config`; stored in ~/.tower_cli.cfg).
+host: http://tower-cli.example.com
+username: admin
+password: password
+verify_ssl: False
+
+# Defaults.
+use_token: False
+verbose: False
+certificate:
+format: human
+color: True
+description_on: False
+----
+
+
+* *Ansible Navigator Cheat Sheet*: https://www.techbeatly.com/ansible-navigator-cheat-sheet/
+
+* *Installing Ansible Navigator*: https://ansible-navigator.readthedocs.io/en/latest/installation/#macos
+
+* *Ansible Navigator Documentation*: https://ansible-navigator.readthedocs.io/en/latest/
