@@ -1,0 +1,16 @@
+= Demo Running Instructions
+
+
+.Install Podman Collecitons
+[source,bash]
+----
+[student@workstation Add_EEs]$ ansible-galaxy collection install -r collections/requirements.yml -p collections/
+----
+
+
+.Run the Ansible Playbook
++
+[source,bash]
+----
+[student@workstation Add_EEs]$ ansible-playbook Build_Container_Demo.yml
+----
