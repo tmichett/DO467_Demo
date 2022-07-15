@@ -12,5 +12,5 @@
 +
 [source,bash]
 ----
-[student@workstation Add_EEs]$ ansible-playbook Build_Container_Demo.yml
+[student@workstation Add_EEs]$ ansible-playbook Load_EE_Demo.yml
 ----
