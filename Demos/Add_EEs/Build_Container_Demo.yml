@@ -1,0 +1,34 @@
+---
+- name: Upload Container Images
+  hosts: localhost
+  vars_files:
+    - vars/registry_login.yml
+  vars:
+    container_images:
+      - ee-29-rhel8.tgz
+  collections:
+    - containers.podman
+
+### Tasks for this playbook will load container images
+
+
+  tasks:
+## Podman Collections Needed for Login
+    - name: Login to Container Registry
+      podman_login:
+        username: "{{ registry_un }}"
+        password: "{{ registry_pass }}"
+        registry: "{{ registry_url }}"
+
+    - name: Build and Push Custom Container Image
+      podman_import:
+        src: /home/student/certified-EEs/{{ container_images }}
+        commit_message: "Importing Image"
+      loop: "{{ container_images }}"
+      
+    - name: Tag Image
+      containers.podman.podman_tag:
+        image: registry.redhat.io/ansible-automation-platform-22/{{ container_images }}
+        target_names:
+          - hub.lab.example.com/ansible-automation-platform-22/{{ container_images }}
+      loop: "{{ container_images }}"
