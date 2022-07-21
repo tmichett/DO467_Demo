@@ -25,3 +25,13 @@ description_on: False
 * *Installing Ansible Navigator*: https://ansible-navigator.readthedocs.io/en/latest/installation/#macos
 
 * *Ansible Navigator Documentation*: https://ansible-navigator.readthedocs.io/en/latest/
+
+* *Introduction to RHEL System Roles*: https://www.redhat.com/en/blog/introduction-rhel-system-roles
+
+* *Inside Playbook - Automation controller workflow deployment as code*: https://www.ansible.com/blog/automation-controller-workflow-deployment-as-code
+
+* *Ansible Automation Platform Certified Content*: https://access.redhat.com/articles/3642632
+
+* *Inside Playbook - Automating execution environment image builds with GitHub Actions*: https://www.ansible.com/blog/automating-execution-environment-image-builds-with-github-actions
+
+* *Ansible Builder Guide*: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html-single/ansible_builder_guide/index#proc-customize-ee-image
