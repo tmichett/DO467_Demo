@@ -35,3 +35,7 @@ description_on: False
 * *Inside Playbook - Automating execution environment image builds with GitHub Actions*: https://www.ansible.com/blog/automating-execution-environment-image-builds-with-github-actions
 
 * *Ansible Builder Guide*: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html-single/ansible_builder_guide/index#proc-customize-ee-image
+
+* *Migrating Roles to Roles in Collections on Galaxy*: https://docs.ansible.com/ansible/latest/dev_guide/migrating_roles.html
+
+* *Ansible Galaxy: Collections and Roles*: https://docs.rockylinux.org/books/learning_ansible/04-ansible-galaxy/
