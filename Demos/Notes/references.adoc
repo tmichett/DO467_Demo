@@ -39,3 +39,5 @@ description_on: False
 * *Migrating Roles to Roles in Collections on Galaxy*: https://docs.ansible.com/ansible/latest/dev_guide/migrating_roles.html
 
 * *Ansible Galaxy: Collections and Roles*: https://docs.rockylinux.org/books/learning_ansible/04-ansible-galaxy/
+
+* *Red Hat Enterprise Linux (RHEL) System Roles*: https://access.redhat.com/articles/3050101
