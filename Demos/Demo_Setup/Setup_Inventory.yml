@@ -23,7 +23,7 @@
         source_project: "DO467 Demo Project"
         source: scm
         source_path: "inventory"
-        update_on_launch: True
+        update_on_launch: "no"
         overwrite: "yes"
         overwrite_vars: "yes"
         state: "present"
@@ -34,7 +34,7 @@
 
 
 
-    - name: Update DO467 Project Inventory -  Source
+    - name: Initial Update DO467 Project Inventory -  Source
       ansible.controller.inventory_source_update:
         name: "DO467 Demo Project Inventory Source"
         organization: "Red Hat Training"

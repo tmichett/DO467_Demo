@@ -9,7 +9,7 @@
         name: "DO467 Demo Project"
         description: "DO467 Demo Project from Github"
         organization: "Red Hat Training"
-        scm_update_on_launch: true
+        scm_update_on_launch: "no"
         scm_url: https://github.com/tmichett/AAP2_Demos.git
         scm_type: git
         scm_branch: main
