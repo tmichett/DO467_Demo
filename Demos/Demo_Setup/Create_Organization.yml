@@ -1,0 +1,15 @@
+---
+- name: Create Organization
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Organization
+      ansible.controller.organization:
+        name: "Red Hat Training"
+        description: "Red Hat Training Organization - Demo"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present

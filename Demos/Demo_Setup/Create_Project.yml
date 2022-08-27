@@ -1,0 +1,21 @@
+---
+- name: Create Project
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Demo Project
+      ansible.controller.project:
+        name: "DO467 Demo Project"
+        description: "DO467 Demo Project from Github"
+        organization: "Red Hat Training"
+        scm_update_on_launch: true
+        scm_url: https://github.com/tmichett/AAP2_Demos.git
+        scm_type: git
+        scm_branch: main
+        credential: Travis GH SCM PAT Credential
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present

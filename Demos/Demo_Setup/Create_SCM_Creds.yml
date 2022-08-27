@@ -1,0 +1,21 @@
+---
+- name: Create Credentials
+  hosts: localhost
+  vars_files: vars.yml
+  tasks:
+
+    - name: Create SCM Credential
+      ansible.controller.credential:
+        name: "Travis GH SCM PAT Credential"
+        description: "Travis Github with Personal Token"
+        state: present
+        organization: Red Hat Training
+        credential_type: Source Control
+        inputs:
+          username: tmichett
+          password: "{{ Github_PAT }}"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+ 
