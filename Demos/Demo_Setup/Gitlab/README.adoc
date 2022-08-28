@@ -12,6 +12,10 @@ PW: *Student@123*
 . Create a New Project Called *AAP2_Demos*
 
 
+pip3 install python-gitlab
+ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/bin/python3'
+
+
 = Clone Github Repository to Gitlab 
 
 
