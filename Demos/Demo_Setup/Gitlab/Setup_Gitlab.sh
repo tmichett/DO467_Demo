@@ -36,7 +36,7 @@ echo "Pushing to Gitlab Now"
 
 cd /tmp/Github/AAP2_Demos
 git remote add gitlab https://git.lab.example.com/student/aap2_demos
-git remote set-url origin https://name:password@git.lab.example.com/student/aap2_demos
+git remote set-url origin https://student:Student@123@git.lab.example.com/student/aap2_demos
 git push -u gitlab main
 
 

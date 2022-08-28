@@ -1,0 +1,12 @@
+---
+- name: Create Gitlab Project
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Gitlab Project
+      community.general.gitlab_project:
+        api_url: https://git.lab.example.com/
+        api_username: student
+        api_password: Student@123
+        name: AAP2_Demos
