@@ -15,22 +15,30 @@ echo "***** Push Repository to Gitlab ***************"
 echo "**********************************************"
 
 echo ""
-echo "Please Setup the Gitlab Repository and Create in Gitlab"
-echo "URL: https://git.lab.example.com"
-echo "UN/PW: student/Student@123"
-echo "Select *Create Project => Create Blank Project*"
-echo "Project Name: AAP2_Demos"
-echo "Visibility: Public"
-echo "Click *Create Project*"
-echo "Press Enter key to continue (After Repository Setup)"
-while [ true ] ; do
-read -t 3 -n 1
-if [ $? = 0 ] ; then
-break ;
-else
-echo "waiting for the Gitlab Setup"
-fi
-done
+
+echo "Creating Gitlab Project"
+
+cd /home/student/Github/DO467_Notes/Demos/Demo_Setup/Gitlab
+pip3 install python-gitlab
+ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/bin/python3'
+
+
+#echo "Please Setup the Gitlab Repository and Create in Gitlab WebUI"
+#echo "URL: https://git.lab.example.com"
+#echo "UN/PW: student/Student@123"
+#echo "Select *Create Project => Create Blank Project*"
+#echo "Project Name: AAP2_Demos"
+#echo "Visibility: Public"
+#echo "Click *Create Project*"
+#echo "Press Enter key to continue (After Repository Setup)"
+#while [ true ] ; do
+#read -t 3 -n 1
+#if [ $? = 0 ] ; then
+#break ;
+#else
+#echo "waiting for the Gitlab Setup"
+#fi
+#done
 
 echo "Pushing to Gitlab Now"
 
