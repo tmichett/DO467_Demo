@@ -1,10 +1,13 @@
 ---
 ### Create Ansible Controller Demo
 - import_playbook: Create_Organization.yml
+- import_playbook: Create_Users.yml
+- import_playbook: Create_Teams.yml
+- import_playbook: Create_Roles.yml
 - import_playbook: Create_Machine_Creds.yml
 - import_playbook: Create_SCM_Creds.yml
 - import_playbook: Create_Project.yml
 - import_playbook: Setup_Inventory.yml
 - import_playbook: Create_Job_Template.yml
-
+- import_playbook: Create_Job_Workflow_Template.yml
 

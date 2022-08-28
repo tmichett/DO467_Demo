@@ -1,0 +1,26 @@
+---
+- name: Create Teams Using Ansible Controller Colleciton
+  hosts: localhost
+  vars_files:
+
+  tasks:
+
+    - name: Create Admin Team
+      ansible.controller.team:
+        name: Admins
+        description: System Administrators
+        organization: "Red Hat Training"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        state: present
+
+    - name: Create Dev Team
+      ansible.controller.team:
+        name: Devs
+        description: System Developers
+        organization: "Red Hat Training"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        state: present

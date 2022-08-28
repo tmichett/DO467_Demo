@@ -1,0 +1,27 @@
+---
+- name: Create Teams Using Ansible Controller Colleciton
+  hosts: localhost
+  vars_files:
+
+  tasks:
+
+    - name: Create Admin Role for Travis
+      ansible.controller.role:
+        user: travis
+        role: admin
+        target_team: "Admins"
+        organization: "Red Hat Training"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        state: present
+
+    - name: Create Execute Role for Sivart
+      ansible.controller.role:
+        user: sivart
+        role: execute
+        workflows: "DO467 Deploy Web Demo Workflow Job Template"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        state: present

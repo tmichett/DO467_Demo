@@ -1,4 +1,4 @@
 ---
 collections:
-  - name: "/tmp/ansible-controller-4.1.1.tar.gz"
+  - name: "/tmp/ansible-controller-4.2.0.tar.gz"
     type: file
