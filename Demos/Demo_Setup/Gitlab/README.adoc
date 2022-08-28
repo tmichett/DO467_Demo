@@ -1,0 +1,17 @@
+= Configure Gitlab Repository
+
+. Login to Gitlab
++
+====
+https://git.lab.example.com
+
+UN: *student*
+PW: *Student@123*
+====
+
+. Create a New Project Called *AAP2_Demos*
+
+
+= Clone Github Repository to Gitlab 
+
+
