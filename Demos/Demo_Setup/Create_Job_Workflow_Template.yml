@@ -45,20 +45,6 @@
         controller_host: https://controller.lab.example.com
         validate_certs: false
 
-
-### Link Approval to Prod and Stop for Approval
-    - name: Link Approval Node to Production
-      ansible.controller.workflow_job_template_node:
-        organization: Red Hat Training
-        workflow_job_template: "DO467 Deploy Web Demo Workflow Job Template"
-        identifier: Execute QA 
-        controller_username: admin
-        controller_password: redhat
-        controller_host: https://controller.lab.example.com
-        validate_certs: false
-        success_nodes:
-          - Approve to Prod    
-
 ### Run Job Template for QA Environment
     - name: Create Run Job Template QA Environment Step
       ansible.controller.workflow_job_template_node:
@@ -74,6 +60,32 @@
           inv_host_var: QA
         success_nodes:
           - Approve to Prod
+
+### Link Approval to QA 
+#    - name: Link Approval Node to QA
+#      ansible.controller.workflow_job_template_node:
+#        organization: Red Hat Training
+#        workflow_job_template: "DO467 Deploy Web Demo Workflow Job Template"
+#        identifier: Execute QA 
+#        controller_username: admin
+#        controller_password: redhat
+#        controller_host: https://controller.lab.example.com
+#        validate_certs: false
+#        success_nodes:
+#          - Approve to Prod 
+
+### Link Approval to Prod 
+    - name: Link Approval Node to Production
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        workflow_job_template: "DO467 Deploy Web Demo Workflow Job Template"
+        identifier: Approve to Prod
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        success_nodes:
+          - Execute PROD
 
 ### Run Job Template for Dev Environment
     - name: Create Run Job Template Dev Environment Step
