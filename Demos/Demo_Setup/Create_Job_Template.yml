@@ -14,6 +14,7 @@
         job_type: run
         playbook: "Deploy_WS_AAP2_Demo.yml"
         credential: DO467 Machine Credentials
+        ask_extra_vars: "yes"
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
