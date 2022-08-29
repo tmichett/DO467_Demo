@@ -19,9 +19,16 @@ echo ""
 echo "Creating Gitlab Project"
 
 cd /home/student/Github/DO467_Notes/Demos/Demo_Setup/Gitlab
+
+#Install Pre-Req Python Modules for Gitlab Ansible Modules
+sudo python3.6 -m pip install python-gitlab
+sudo python3.6 -m pip install requests
+
+#Install Community General Colelction for Ansible to provide Gitlab Ansible Module
 ansible-galaxy collection install collections/community-general-5.5.0.tar.gz -p ./collections/
-pip3 install python-gitlab
-ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/bin/python3'
+
+#Run Ansible Playbook with Correct Python Interpreter
+ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/bin/python3.6'
 
 
 #echo "Please Setup the Gitlab Repository and Create in Gitlab WebUI"
@@ -45,7 +52,7 @@ echo "Pushing to Gitlab Now"
 
 cd /tmp/Github/AAP2_Demos
 git remote add gitlab https://git.lab.example.com/student/aap2_demos
-git remote set-url origin https://student:Student@123@git.lab.example.com/student/aap2_demos
+git remote set-url origin https://"student:Student@123"@git.lab.example.com/student/aap2_demos
 git push -u gitlab main
 
 

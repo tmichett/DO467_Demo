@@ -11,3 +11,4 @@
         api_password: Student@123
         name: AAP2_Demos
         validate_certs: "false"
+        visibility: public
