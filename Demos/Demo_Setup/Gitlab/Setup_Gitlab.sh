@@ -19,6 +19,7 @@ echo ""
 echo "Creating Gitlab Project"
 
 cd /home/student/Github/DO467_Notes/Demos/Demo_Setup/Gitlab
+ansible-galaxy collection install collections/community-general-5.5.0.tar.gz -p ./collections/
 pip3 install python-gitlab
 ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/bin/python3'
 
