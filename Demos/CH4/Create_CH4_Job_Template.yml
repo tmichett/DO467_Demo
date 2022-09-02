@@ -30,7 +30,7 @@
         project: CH4 DO467 Demo Project
         inventory: DO467 Demo Inventory
         job_type: run
-        playbook: "site.yml"
+        playbook: "site2.yml"
         credential: DO467 Machine Credentials
         ask_extra_vars: "yes"
         controller_username: admin
