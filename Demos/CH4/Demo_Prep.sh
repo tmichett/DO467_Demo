@@ -17,3 +17,4 @@ cd /home/student/Github/DO467_Notes/Demos/CH4
 ansible-galaxy collection install -r collections/requirements.yml -p collections/
 
 ansible-playbook Create_CH4_Project.yml
+ansible-playbook Create_CH4_Job_Template.yml

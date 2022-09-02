@@ -8,6 +8,8 @@
       ansible.controller.organization:
         name: "Red Hat Training"
         description: "Red Hat Training Organization - Demo"
+        galaxy_credentials:
+          - Ansible Galaxy
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com

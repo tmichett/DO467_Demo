@@ -1,0 +1,40 @@
+---
+- name: Create Job Template
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Job Template
+      ansible.controller.job_template:
+        name: "DO467 Deploy Web CH4 Demo Job Template"
+        description: "Demo Job from Project for CH4"
+        organization: Red Hat Training
+        project: CH4 DO467 Demo Project
+        inventory: DO467 Demo Inventory
+        job_type: run
+        playbook: "Deploy_WS_Services_Collection.yml"
+        credential: DO467 Machine Credentials
+        ask_extra_vars: "yes"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+
+    - name: Create Job Template
+      ansible.controller.job_template:
+        name: "DO467 Deploy Web CH4 Demo (WS Content) Job Template"
+        description: "Demo Job from Project for CH4 - Site.yml"
+        organization: Red Hat Training
+        project: CH4 DO467 Demo Project
+        inventory: DO467 Demo Inventory
+        job_type: run
+        playbook: "site.yml"
+        credential: DO467 Machine Credentials
+        ask_extra_vars: "yes"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
