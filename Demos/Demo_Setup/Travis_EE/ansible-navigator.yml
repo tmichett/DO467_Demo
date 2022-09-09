@@ -1,0 +1,14 @@
+---
+ansible-navigator:
+  execution-environment:
+    image: quay.io/tmichett/aap2-ee-demo:1.0
+    pull-policy: missing
+
+  mode: stdout
+
+  playbook-artifact:
+    enable: false
+
+  logging:
+    file: /dev/null
+...

@@ -1,7 +1,11 @@
 ---
 - name: Create Gitlab Project
   hosts: localhost
-
+  vars:
+    gitlab_project:
+      - AAP2_Demos
+      - Inv_Proj
+      - Basic_Demo
   tasks:
 
     - name: Create Gitlab Project
@@ -9,6 +13,7 @@
         api_url: https://git.lab.example.com/
         api_username: student
         api_password: Student@123
-        name: AAP2_Demos
+        name: "{{ item }}"
         validate_certs: "false"
         visibility: public
+      loop: "{{ gitlab_project }}"
