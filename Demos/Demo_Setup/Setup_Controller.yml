@@ -12,6 +12,7 @@
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
+        validate_certs: false
         inputs:
           username: tmichett
           ssh_key_data: "{{ lookup('file', '/tmp/github_id') }}"

@@ -17,6 +17,7 @@
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
+        validate_certs: false
         become_enabled: true
         extra_vars:
           inv_host_var: servere
@@ -36,6 +37,7 @@
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
+        validate_certs: false
         become_enabled: true
         extra_vars:
           inv_host_var: serverf

@@ -1,0 +1,13 @@
+---
+users:
+  - first_name: Sheldon
+    last_name: Cooper
+    username: scooper
+    email:  scooper@redhat.com
+    password: redhat123
+
+  - first_name: Frodo
+    last_name: Baggins
+    username: frodo
+    email:  frodo@redhat.com
+    password: redhat123

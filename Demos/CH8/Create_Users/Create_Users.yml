@@ -2,7 +2,7 @@
 - name: Create Users Using Ansible Controller Colleciton
   hosts: localhost
   vars_files:
-    - controller_users.yml
+    - tower_users.yml
 
   tasks:
 

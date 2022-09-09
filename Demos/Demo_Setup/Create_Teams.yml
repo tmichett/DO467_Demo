@@ -13,6 +13,7 @@
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
+        validate_certs: false
         state: present
 
     - name: Create Dev Team
@@ -23,4 +24,5 @@
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
+        validate_certs: false
         state: present
