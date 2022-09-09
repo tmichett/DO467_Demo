@@ -48,7 +48,7 @@ ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/
 #fi
 #done
 
-echo "Pushing to Gitlab Now"
+echo "Pushing AAP2 Demo to Gitlab Now"
 
 cd /tmp/Github/AAP2_Demos
 git remote add gitlab https://git.lab.example.com/student/aap2_demos
@@ -64,3 +64,18 @@ echo "**********************************************"
 mkdir /home/student/Gitlab
 cd /home/student/Gitlab
 git clone https://git.lab.example.com/student/aap2_demos.git 
+
+
+echo "**********************************************"
+echo "******* Inventory Demo Setup Gitlab *   ******"
+echo "**********************************************"
+
+mkdir /tmp/CH7
+cp -avR /home/student/Github/DO467_Notes/Demos/CH7/Inventory_Project/* /tmp/CH7/
+cd ~/Github 
+git clone https://git.lab.example.com/student/Inv_Proj
+cd Inv_Proj
+cp -avR /tmp/CH7/* . 
+git add .
+git commit -m "Initial Inventory Add"
+git push 
