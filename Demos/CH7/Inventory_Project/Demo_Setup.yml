@@ -53,7 +53,7 @@
         name: "CH7 Demo Inventory Source"
         organization: "Red Hat Training"
         inventory: "CH7 Demo Inventory"
-        source_project: "DO467 Demo Project"
+        source_project: "CH7 Demo Project"
         source: scm
         source_path: "inventory"
         update_on_launch: "no"
