@@ -1,0 +1,22 @@
+---
+- name: Create Job Template
+  hosts: localhost
+
+  tasks:
+
+    - name: Create CH8 Job Template
+      ansible.controller.job_template:
+        name: "CH8 Deploy Web Demo Job Template"
+        description: "Demo Job from Project"
+        organization: Red Hat Training
+        project: CH8 Demo Project
+        inventory: CH8 Demo Inventory
+        job_type: run
+        playbook: "Deploy_WS_AAP2_Demo.yml"
+        credential: DO467 Machine Credentials
+        ask_extra_vars: "yes"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present

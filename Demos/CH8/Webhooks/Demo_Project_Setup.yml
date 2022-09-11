@@ -1,0 +1,78 @@
+---
+- name: Create Chapter 8 Project
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Gitlab SCM Credential
+      ansible.controller.credential:
+        name: "Student Gitlab SCM PAT Credential"
+        description: "Student Gitlab with Personal Token"
+        state: present
+        organization: Red Hat Training
+        credential_type: Source Control
+        inputs:
+          username: student
+          password: Student@123
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+
+
+    - name: Create CH8 Demo Project
+      ansible.controller.project:
+        name: "CH8 Demo Project"
+        description: "Chapter 8 Demo Project from Gitlab"
+        organization: "Red Hat Training"
+        scm_update_on_launch: "no"
+        scm_url: https://git.lab.example.com/student/aap2_demos.git
+        scm_type: git
+        scm_branch: main
+        credential: Student Gitlab SCM PAT Credential
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+    - name: Create DO467 Inventory Demo Inv
+      ansible.controller.inventory:
+        name: "CH8 Demo Inventory"
+        organization: "Red Hat Training"
+        state: "present"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+
+
+
+    - name: Create DO467 Project Inventory -  Source
+      ansible.controller.inventory_source:
+        name: "CH8 Demo Inventory Source"
+        organization: "Red Hat Training"
+        inventory: "CH8 Demo Inventory"
+        source_project: "CH8 Demo Project"
+        source: scm
+        source_path: "inventory"
+        update_on_launch: "no"
+        overwrite: "yes"
+        overwrite_vars: "yes"
+        state: "present"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+
+
+
+    - name: Initial Update DO467 Project Inventory -  Source
+      ansible.controller.inventory_source_update:
+        name: "CH8 Demo Inventory Source"
+        organization: "Red Hat Training"
+        inventory: "CH8 Demo Inventory"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false

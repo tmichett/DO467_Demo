@@ -1,0 +1,122 @@
+---
+- name: Create Job WorkflowTemplate
+  hosts: localhost
+
+  tasks:
+
+### Create Job Workflow Template
+
+    - name: Create Job Workflow Template
+      ansible.controller.workflow_job_template:
+        name: "CH8 Deploy Web Demo Workflow Job Template"
+        organization: Red Hat Training
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+### Run Job Template for Prod Environment (after approval)
+    - name: Create Run Job Template PROD Environment Step
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        identifier: Execute PROD
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        unified_job_template: "CH8 Deploy Web Demo Job Template"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        extra_data:
+          inv_host_var: PROD
+
+### Create Approval to Prod
+    - name: Create Approval to PROD Step
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        identifier: Approve to Prod
+        approval_node: 
+          description: "Approval to Prod"
+          name: Execute PROD
+          timeout: 86400
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+
+### Run Job Template for QA Environment
+    - name: Create Run Job Template QA Environment Step
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        identifier: Execute QA
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        unified_job_template: "CH8 Deploy Web Demo Job Template"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        extra_data:
+          inv_host_var: QA
+        success_nodes:
+          - Approve to Prod
+
+### Link Approval to Prod 
+    - name: Link Approval Node to Production
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        identifier: Approve to Prod
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        success_nodes:
+          - Execute PROD
+
+### Run Job Template for Dev Environment
+    - name: Create Run Job Template Dev Environment Step
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        identifier: Execute DEV
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        unified_job_template: "CH8 Deploy Web Demo Job Template"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        extra_data:
+          inv_host_var: DEV
+        success_nodes:
+          - Execute QA
+
+### Synchronize Inventory
+    - name: Create Synchronize Inventory Source Step
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        identifier: Synchronize Inventory
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        unified_job_template: "CH8 Demo Inventory Source"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        success_nodes:
+          - Execute DEV
+
+### Synchronize Project
+    - name: Create Synchronize Project Step
+      ansible.controller.workflow_job_template_node:
+        organization: Red Hat Training
+        identifier: Synchronize Project
+        workflow_job_template: "CH8 Deploy Web Demo Workflow Job Template"
+        unified_job_template: "CH8 Demo Project"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        success_nodes:
+          - Synchronize Inventory
+
+
+
