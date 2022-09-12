@@ -18,7 +18,7 @@ echo ""
 
 echo "Creating Gitlab Project"
 
-cd /home/student/Github/DO467_Notes/Demos/Demo_Setup/Gitlab
+cd /home/student/Github/DO467_Demo/Demos/Demo_Setup/Gitlab
 
 #Install Pre-Req Python Modules for Gitlab Ansible Modules
 sudo python3.6 -m pip install python-gitlab
@@ -63,7 +63,7 @@ echo "**********************************************"
 
 mkdir /home/student/Gitlab
 cd /home/student/Gitlab
-git clone https://git.lab.example.com/student/aap2_demos.git 
+git clone https://git.lab.example.com/student/aap2_demos.git
 
 
 echo "**********************************************"
@@ -72,10 +72,10 @@ echo "**********************************************"
 
 mkdir /tmp/CH7
 cp -avR /home/student/Github/DO467_Notes/Demos/CH7/Inventory_Project/* /tmp/CH7/
-cd ~/Github 
+cd ~/Github
 git clone https://git.lab.example.com/student/Inv_Proj
 cd Inv_Proj
-cp -avR /tmp/CH7/* . 
+cp -avR /tmp/CH7/* .
 git add .
 git commit -m "Initial Inventory Add"
-git push 
+git push
