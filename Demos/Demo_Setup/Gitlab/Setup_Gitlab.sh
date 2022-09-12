@@ -71,7 +71,7 @@ echo "******* Inventory Demo Setup Gitlab *   ******"
 echo "**********************************************"
 
 mkdir /tmp/CH7
-cp -avR /home/student/Github/DO467_Notes/Demos/CH7/Inventory_Project/* /tmp/CH7/
+cp -avR /home/student/Github/DO467_Demos/Demos/CH7/Inventory_Project/* /tmp/CH7/
 cd ~/Github
 git clone https://git.lab.example.com/student/Inv_Proj
 cd Inv_Proj
