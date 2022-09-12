@@ -21,14 +21,14 @@
     {% if inv_host_var == "QA" %}
 <html>
 <body>
-Hello I'm {{  inventory_hostname }} and I'm in the {{ inv_host_var }}
+<h1>Hello I'm {{  inventory_hostname }} and I'm in the {{ inv_host_var }}</h1>
  <picture>
   <p style="text-align:center;"><img src="{{ ws_image }}" alt="{{ ws_image }}" style="width:auto;">
 </picture> 
+<br>
+<center>The image should be {{ ws_image }}.</center><br>
 
-The image should be {{ ws_image }}.
-
-I have a special message for you: 
+<center><h1>I have a special message for you: </h1></center><br>
 
 {{ ws_special_message }}
 
@@ -39,14 +39,14 @@ I have a special message for you:
     {% if inv_host_var == "PROD" %}
 <html>
 <body>
-Hello I'm {{  inventory_hostname }} and I'm in the {{ inv_host_var }}
+<h1>Hello I'm {{  inventory_hostname }} and I'm in the {{ inv_host_var }}</h1>
  <picture>
   <p style="text-align:center;"><img src="{{ ws_image }}" alt="{{ ws_image }}" style="width:auto;">
 </picture> 
+<br>
+<center>The image should be {{ ws_image }}.</center><br>
 
-The image should be {{ ws_image }}.
-
-I have a special message for you: 
+<center><h1>I have a special message for you: </h1></center><br>
 
 {{ ws_special_message }}
 
