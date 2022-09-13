@@ -1,0 +1,23 @@
+---
+- name: Create Job Template
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Job Template
+      ansible.controller.job_template:
+        name: "DO467 CH5 Gather Facts Simple"
+        description: "Demo for CH5 fr"
+        organization: Red Hat Training
+        project: CH4 DO467 Demo Project
+        inventory: DO467 Demo Inventory
+        job_type: run
+        playbook: "Gather_Facts_Hello_Demo.yml"
+        credential: DO467 Machine Credentials
+        extra_vars:
+          variavle_facts: true
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
