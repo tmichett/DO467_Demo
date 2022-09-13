@@ -1,14 +1,12 @@
 ---
 ansible-navigator:
   execution-environment:
-    image: ee-supported-rhel8:2.0
-    pull-policy: missing
-  
-  mode: stdout
-  
-  playbook-artifact:
-    enable: false
-
+    image: hub.lab.example.com/ee-supported-rhel8:latest
+    pull:
+      policy: missing
   logging:
     file: /dev/null
+  mode: stdout
+  playbook-artifact:
+    enable: false
 ...
