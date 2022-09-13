@@ -1,11 +1,11 @@
 {
-    "name": "Server Selection",
+    "name": "Simple Survey",
     "description": "Description of the simple survey",
     "spec": [
         {
         "type": "multiselect",
-        "question_name": "What servers do you want to use?",
-        "question_description": "Servers to install webserver and create content.",
+        "question_name": "server_names",
+        "question_description": "What servers do you want to use?",
         "variable": "variable_host",
         "required": false,
         "choices": ["servera", "serverb", "serverc","serverd", "servere", "serverf"]
