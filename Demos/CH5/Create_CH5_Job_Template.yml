@@ -14,6 +14,7 @@
         job_type: run
         playbook: "Gather_Facts_Hello_Demo.yml"
         credential: DO467 Machine Credentials
+        ask_extra_vars: "yes"
         extra_vars:
           variavle_facts: true
         controller_username: admin
