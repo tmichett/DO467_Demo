@@ -4,11 +4,20 @@
     "spec": [
         {
         "type": "multiselect",
-        "question_name": "server_names",
-        "question_description": "What servers do you want to use?",
+        "question_name": "What servers do you want to use?",
+        "question_description": "Selecting inventory hosts to execute playbook on",
         "variable": "variable_host",
         "required": false,
         "choices": ["servera", "serverb", "serverc","serverd", "servere", "serverf"]
+        },
+        {
+        "type": "multiplechoice",
+        "question_name": "Do you want to gather facts?",
+        "question_description": "Enables or disables fact gathering",
+        "variable": "variable_facts",
+        "choices": ["true", "false"],
+        "required": false,
+        "default": "true"
         }
     ]
 }
