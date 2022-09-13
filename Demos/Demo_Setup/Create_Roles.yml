@@ -27,3 +27,15 @@
         controller_host: https://controller.lab.example.com
         validate_certs: false
         state: present
+
+
+    - name: Create Execute Role for Sivart
+      ansible.controller.role:
+        user: sivart
+        role: member
+        organization: "Red Hat Training"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
