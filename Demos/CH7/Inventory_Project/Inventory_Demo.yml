@@ -7,7 +7,7 @@
       debug:
         msg: The variable value for {{ inventory_hostname }} for the value of Course SKU is {{ course_sku }}
 
-    - name: Display variables from hist vars for servera
+    - name: Display variables from host vars for servera
       debug:
-        msg: The values for servera additional variables are course_user {{ course_user }} and password {{ password }} 
+        msg: The values for servera additional variables are course_user {{ course_user }} and password {{ password }}
       when:  inventory_hostname == "servera"
