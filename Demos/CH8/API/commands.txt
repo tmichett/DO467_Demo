@@ -10,5 +10,7 @@ curl -X GET --user admin:redhat https://controller.lab.example.com/api/v2/projec
 
 curl -X GET --user admin:redhat https://controller.lab.example.com/api/v2/job_templates/ -k -s | jq .
 
+curl -X GET --user admin:redhat https://controller.lab.example.com/api/v2/job_templates/ -k -s | jq '.results[] | {name}'
+
 curl -X POST --user admin:redhat https://controller.lab.example.com/api/v2/job_templates/"DO467 Demo Job - Testing Inventory"/launch/ -k -s | jq .
 
