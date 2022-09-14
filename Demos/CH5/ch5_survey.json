@@ -17,7 +17,7 @@
         "variable": "variable_facts",
         "choices": ["true", "false"],
         "required": false,
-        "default": "true"
+	"default": "true"
         }
     ]
 }
