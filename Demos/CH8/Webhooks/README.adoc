@@ -1,0 +1,42 @@
+
+:icons: font
+ifdef::backend-pdf[]
+:title-page-background-image: image:images/Training_Cover.png[pdfwidth=8.0in,align=center]
+:pygments-style: tango
+:source-highlighter: pygments
+endif::[]
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+= Preparing the Demo
+
+.Run the *site.yml* Playbook with Ansible Navigator
+[source,bash]
+----
+[student@workstation Webhooks]$ ansible-navigator run Site.yml
+----
+
+.Credentials for Hub
+[IMPORTANT]
+======
+The *ansible-navigator.yml* file specifies using the *hub.lab.example.com/ee-supported-rhel8:latest* which contains all collections needed to run the playbooks. By this point in the course, the EEI should already be available and downloaded and you should have already authenticated to *hub.lab.example.com*. However, if the environment was re-created or you are delivering RHLS Premium, it is possible that you might need to login to Private Automation Hub.
+
+.Logging into Private Automation Hub
+[source,bash]
+----
+[student@workstation Webhooks]$ podman login hub.lab.example.com
+Username: admin
+Password:
+Login Succeeded!
+----
+
+After logging in, you should be able to run the *Site.yml* playbook.
+======
