@@ -1,3 +1,11 @@
 = Execution Environments
 
 * *The anatomy of automation execution environments*: https://www.ansible.com/blog/the-anatomy-of-automation-execution-environments
+
+* *Automation controller workflow deployment as code*: https://www.ansible.com/blog/automation-controller-workflow-deployment-as-code
+
+* *The anatomy of automation execution environments*: https://www.ansible.com/blog/the-anatomy-of-automation-execution-environments
+
+* *Ansible vs. Terraform Demystified*: https://www.ansible.com/blog/ansible-vs.-terraform-demystified
+
+* *Updates to using Ansible in RHEL 8.6 and 9.0*: https://www.redhat.com/en/blog/updates-using-ansible-rhel-86-and-90
