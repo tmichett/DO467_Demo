@@ -18,6 +18,18 @@ endif::[]
 
 = Preparing the Demo
 
+.Run the Lab Setup playbook
+[source,bash]
+----
+[student@workstation ~]$ lab start code-webhooks
+----
+
+.Login to AAP Hub
+[source,bash]
+----
+[student@workstation ~]$ podman login hub.lab.example.com -u admin -p redhat
+----
+
 .Run the *site.yml* Playbook with Ansible Navigator
 [source,bash]
 ----
