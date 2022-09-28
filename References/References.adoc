@@ -1,3 +1,19 @@
+= Ansible Automation Platform
+
+* *Red Hat Ansible Automation Platform Life Cycle*: https://access.redhat.com/support/policy/updates/ansible-automation-platform
+
+* *When localhost isn't what it seems in Red Hat Ansible Automation Platform 2*: https://www.ansible.com/blog/when-localhost-isnt-what-it-seems-in-red-hat-ansible-automation-platform-2
+
+* *Dynamic inventory plugin collection for network device management*: https://www.ansible.com/blog/when-localhost-isnt-what-it-seems-in-red-hat-ansible-automation-platform-2
+
+* *Ansible Tips and Tricks: Dealing with Unreliable Connections and Services*: https://www.ansible.com/blog/ansible-tips-and-tricks-dealing-with-unreliable-connections-and-services
+
+* *Red Hat Ansible Automation Platform Workshops*: https://aap2.demoredhat.com/
+
+* *Ansible-core 2.12 Porting Guide*: https://docs.ansible.com/ansible-core/devel/porting_guides/porting_guide_core_2.12.html
+
+* *Index of all Callback Plugins*: https://docs.ansible.com/ansible/latest/collections/index_callback.html
+
 = Execution Environments
 
 * *The anatomy of automation execution environments*: https://www.ansible.com/blog/the-anatomy-of-automation-execution-environments
@@ -9,3 +25,11 @@
 * *Ansible vs. Terraform Demystified*: https://www.ansible.com/blog/ansible-vs.-terraform-demystified
 
 * *Updates to using Ansible in RHEL 8.6 and 9.0*: https://www.redhat.com/en/blog/updates-using-ansible-rhel-86-and-90
+
+* *Build and Run an Ansible Execution Environment - ansible-builder and ansible-runner tools*: https://www.ansiblepilot.com/articles/build-and-run-an-ansible-execution-environment-ansible-builder-and-ansible-runner-tools/
+
+* *Build a Custom Ansible Execution Environment - ansible-builder command-line tool*: https://www.ansiblepilot.com/articles/build-an-ansible-execution-environment-ansible-builder-command-line-tool
+
+= Python
+
+* *How to install Python 3 on Red Hat Enterprise Linux*: https://developers.redhat.com/blog/2018/08/13/install-python3-rhel#
