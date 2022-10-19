@@ -1,0 +1,11 @@
+---
+- name: Say Hello from All Systems
+  hosts: all
+  gather_facts: no
+
+
+  tasks:
+
+    - name: Say Hello
+      debug:
+        msg: I'm host {{ inventory_hostname }} and I wanted to say Hello!!!
