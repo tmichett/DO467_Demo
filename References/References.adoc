@@ -2,6 +2,12 @@
 
 * *Red Hat Ansible Automation Platform Life Cycle*: https://access.redhat.com/support/policy/updates/ansible-automation-platform
 
+* *Ansible Automation Platform 1.2 to 2 Migration Guide*: https://access.redhat.com/documentation/en-us/reference_architectures/2022/html-single/ansible_automation_platform_1.2_to_2_migration_guide/index
+
+* *Consolidated article for LDAP-connected Ansible private automation hub*: https://access.redhat.com/articles/6977659
+
+* *Can the Default Admin Account be Disabled/Removed in Ansible Tower?*: https://access.redhat.com/solutions/3109861
+
 * *When localhost isn't what it seems in Red Hat Ansible Automation Platform 2*: https://www.ansible.com/blog/when-localhost-isnt-what-it-seems-in-red-hat-ansible-automation-platform-2
 
 * *Dynamic inventory plugin collection for network device management*: https://www.ansible.com/blog/when-localhost-isnt-what-it-seems-in-red-hat-ansible-automation-platform-2
