@@ -16,6 +16,7 @@
         credential: DO467 Machine Credentials
         survey_enabled: true
         survey_spec: "{{ lookup('file', 'ch5_survey_hello.json') }}"
+        use_fact_cache: yes
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
