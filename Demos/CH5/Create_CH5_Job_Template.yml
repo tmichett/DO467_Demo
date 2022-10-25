@@ -16,7 +16,7 @@
         credential: DO467 Machine Credentials
         ask_extra_vars: "yes"
         extra_vars:
-          variavle_facts: true
+          variable_facts: true
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com

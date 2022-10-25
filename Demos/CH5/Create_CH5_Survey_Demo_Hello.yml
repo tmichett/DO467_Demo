@@ -1,0 +1,26 @@
+---
+- name: Create Job Template with Survey
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Job Template
+      ansible.controller.job_template:
+        name: "DO467 CH5 Job Survey and Facts Hello Demo"
+        description: "Demo for CH5 Job Survey with Hello Project"
+        organization: Red Hat Training
+        project: CH4 DO467 Demo Project
+        inventory: DO467 Demo Inventory
+        job_type: run
+        playbook: "Gather_Facts_Hello_Demo.yml"
+        credential: DO467 Machine Credentials
+        survey_enabled: true
+        survey_spec: "{{ lookup('file', 'ch5_survey_hello.json') }}"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+# Survey SPEC Information
+# https://docs.ansible.com/ansible-tower/latest/html/towerapi/api_ref.html#/Job_Templates/Job_Templates_job_templates_survey_spec_list
