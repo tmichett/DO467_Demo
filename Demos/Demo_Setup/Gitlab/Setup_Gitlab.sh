@@ -49,6 +49,9 @@ ansible-playbook Create_Gitlab_Project.yml  -e 'ansible_python_interpreter=/usr/
 #done
 
 echo "Pushing AAP2 Demo to Gitlab Now"
+echo "UN/PW Combination"
+echo "UN: student"
+echo "PW: Student@123"
 
 cd /tmp/Github/AAP2_Demos
 git remote add gitlab https://git.lab.example.com/student/aap2_demos
