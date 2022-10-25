@@ -20,6 +20,8 @@
 
 * *Index of all Callback Plugins*: https://docs.ansible.com/ansible/latest/collections/index_callback.html
 
+* *An introduction to Ansible facts*: https://www.redhat.com/sysadmin/playing-ansible-facts
+
 = Execution Environments
 
 * *The anatomy of automation execution environments*: https://www.ansible.com/blog/the-anatomy-of-automation-execution-environments
