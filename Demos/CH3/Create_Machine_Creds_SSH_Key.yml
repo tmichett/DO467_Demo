@@ -3,14 +3,13 @@
   hosts: localhost
 
   tasks:
-
+    - name: "DO467 Machine Credentials - CH3 Demo - Key"
       ansible.controller.credential:
         name: "DO467 Machine Credentials - CH3 Demo - Key"
         description: "SSH Username and SSH Key"
         organization: Red Hat Training
         credential_type: Machine
         inputs:
-          username: devops
           ssh_key_data: "{{ lookup('file', '/home/student/.ssh/lab_rsa') }}"
         controller_username: admin
         controller_password: redhat
