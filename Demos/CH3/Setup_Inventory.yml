@@ -1,44 +1,13 @@
 ---
-- name: Playbook to Configure Controller with a Project-Based inventory Source for the Job Template Workflow Demo
+- name: Playbook to Configure Controller Inventory
   hosts: localhost
   tasks:
 
-    - name: Create DO467 Inventory
+    - name: Create DO467 Inventory - CH3 Demo
       ansible.controller.inventory:
-        name: "DO467 Demo Inventory"
+        name: "DO467 CH3 - Demo Inventory"
         organization: "Red Hat Training"
         state: "present"
-        controller_username: admin
-        controller_password: redhat
-        controller_host: https://controller.lab.example.com
-        validate_certs: false
-
-
-
-    - name: Create DO467 Project Inventory -  Source
-      ansible.controller.inventory_source:
-        name: "DO467 Demo Project Inventory Source"
-        organization: "Red Hat Training"
-        inventory: "DO467 Demo Inventory"
-        source_project: "DO467 Demo Project"
-        source: scm
-        source_path: "inventory"
-        update_on_launch: "no"
-        overwrite: "yes"
-        overwrite_vars: "yes"
-        state: "present"
-        controller_username: admin
-        controller_password: redhat
-        controller_host: https://controller.lab.example.com
-        validate_certs: false
-
-
-
-    - name: Initial Update DO467 Project Inventory -  Source
-      ansible.controller.inventory_source_update:
-        name: "DO467 Demo Project Inventory Source"
-        organization: "Red Hat Training"
-        inventory: "DO467 Demo Inventory"
         controller_username: admin
         controller_password: redhat
         controller_host: https://controller.lab.example.com
