@@ -1,6 +1,6 @@
 ---
 - name: Create Credentials Username and SSH Key
-  hosts: localhost
+  hosts: workstation
 
   tasks:
     - name: "DO467 Machine Credentials - CH3 Demo - Key"
