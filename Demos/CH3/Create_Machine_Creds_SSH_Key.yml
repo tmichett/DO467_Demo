@@ -1,0 +1,19 @@
+---
+- name: Create Credentials Username and SSH Key
+  hosts: localhost
+
+  tasks:
+
+      ansible.controller.credential:
+        name: "DO467 Machine Credentials - CH3 Demo - Key"
+        description: "SSH Username and SSH Key"
+        organization: Red Hat Training
+        credential_type: Machine
+        inputs:
+          username: devops
+          ssh_key_data: "{{ lookup('file', '/home/student/.ssh/lab_rsa') }}"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
