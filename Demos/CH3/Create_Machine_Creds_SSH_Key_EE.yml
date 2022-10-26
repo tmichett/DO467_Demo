@@ -29,3 +29,7 @@
 
 ## Fails on lookup with EEI
 ## [WARNING]: Unable to find '/home/student/.ssh/lab_rsa' in expected paths (use -vvvvv to see paths)
+
+### Solution - EE doesn't have access and can't mount /home directly into the container (EE)
+### The SLURP module can be used to read in files, but the contents are B64 encoded
+### Need to decode the content from the "SLURP" module
