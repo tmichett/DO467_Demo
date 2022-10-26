@@ -1,0 +1,31 @@
+---
+- name: Create Credentials Username and SSH Key
+  hosts: workstation
+
+  tasks:
+    - name: "Read in SSH Key"
+      ansible.builtin.slurp:
+        src: /home/student/.ssh/lab_rsa
+      register: SSH_KEY
+
+    - name: "DO467 Machine Credentials - CH3 Demo - Key"
+      ansible.controller.credential:
+        name: "DO467 Machine Credentials - CH3 Demo - Key"
+        description: "SSH Username and SSH Key"
+        organization: Red Hat Training
+        credential_type: Machine
+        inputs:
+          username: devops
+          ssh_key_data: "{{ SSH_KEY['content'] | b64decode }}"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+## Playbook works with the Ansible Controller Collection installed
+## [student@workstation CH3]$ ansible-galaxy collection install collections/ansible-controller-4.2.0.tar.gz -p collections/
+## [student@workstation CH3]$ ansible-playbook Create_Machine_Creds_SSH_Key.yml
+
+## Fails on lookup with EEI
+## [WARNING]: Unable to find '/home/student/.ssh/lab_rsa' in expected paths (use -vvvvv to see paths)
