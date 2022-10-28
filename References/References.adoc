@@ -22,6 +22,35 @@
 
 * *An introduction to Ansible facts*: https://www.redhat.com/sysadmin/playing-ansible-facts
 
+* *Ansible Navigator Creator Guide*: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.0-ea/html-single/ansible_navigator_creator_guide/index
+
+* *Ansible Navigator FAQ*: https://github.com/ansible/ansible-navigator/blob/main/docs/faq.md
+
+* *Ansible Navigator Settings*: https://github.com/ansible/ansible-navigator/blob/main/docs/settings.rst#id1
+
+* *Automation content navigator configuration settings*: https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.0-ea/html/ansible_navigator_creator_guide/assembly-settings-navigator_ansible-navigator
+** https://ansible-navigator.readthedocs.io/en/latest/settings/
+
+* *Ansible Self-Paced Labs (free)*: https://www.ansible.com/products/ansible-community-training
+
+* *Event-Driven Ansible developer preview*: https://www.ansible.com/use-cases/event-driven-automation
+
+* *The AWX Project FAQ*: https://www.ansible.com/products/awx-project/faq#:~:text=Ansible%20Automation%20Platform%20is%20fully,and%20Red%20Hat%20Enterprise%20Linux.
+
+* *Ansible Automation Platform Upgrade and Migration Guide*: https://docs.ansible.com/automation-controller/latest/html/upgrade-migration-guide/index.html
+
+
+
+== Ansible Reference Guides
+
+* *Playbook Keywords*: https://docs.ansible.com/ansible/latest/reference_appendices/playbooks_keywords.html#play
+
+* *Index of all Callback Plugins*: https://docs.ansible.com/ansible/latest/collections/index_callback.html
+
+* *Installing Ansible*: https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+* *Deep dive on Ansible VScode extension*: https://www.ansible.com/blog/deep-dive-on-ansible-vscode-extension
+
 = Execution Environments
 
 * *The anatomy of automation execution environments*: https://www.ansible.com/blog/the-anatomy-of-automation-execution-environments
@@ -38,6 +67,18 @@
 
 * *Build a Custom Ansible Execution Environment - ansible-builder command-line tool*: https://www.ansiblepilot.com/articles/build-an-ansible-execution-environment-ansible-builder-command-line-tool
 
+* *Execution Environments*: https://docs.ansible.com/automation-controller/latest/html/userguide/execution_environments.html
+
+* *When localhost isn't what it seems in Red Hat Ansible Automation Platform 2*: https://www.ansible.com/blog/when-localhost-isnt-what-it-seems-in-red-hat-ansible-automation-platform-2
+
 = Python
 
 * *How to install Python 3 on Red Hat Enterprise Linux*: https://developers.redhat.com/blog/2018/08/13/install-python3-rhel#
+
+= JSON
+
+* *Read a JSON file into a variable - Ansible lookup plugin file*: https://www.ansiblepilot.com/articles/read-a-json-file-into-a-variable-ansible-lookup-plugin-file/
+
+= VSCode
+
+* *Better Jinja (Extension)*: https://marketplace.visualstudio.com/items?itemName=samuelcolvin.jinjahtml
