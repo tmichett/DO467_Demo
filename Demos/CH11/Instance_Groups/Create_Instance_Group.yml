@@ -1,0 +1,15 @@
+---
+- name: Create Job Template
+  hosts: localhost
+  tasks:
+    - name: Create CH11 Instance Groups
+      ansible.controller.instance_group:
+        name: CH11 Demo Instance Group
+        instances:
+          - exec1.lab.example.com
+          - exec3.lab.example.com
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present

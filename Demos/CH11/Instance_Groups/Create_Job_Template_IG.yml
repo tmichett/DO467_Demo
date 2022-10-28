@@ -1,0 +1,23 @@
+---
+- name: Create Hello World Job Template
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Hello World Job Template - CH11 Instance Group Demo
+      ansible.controller.job_template:
+        name: "DO467 CH11 - Instance Group Demo"
+        description: "Demo Job from Project"
+        organization: Red Hat Training
+        project: DO467 Demo Project
+        inventory: DO467 Demo Inventory
+        job_type: run
+        playbook: "hello_world_demo.yml"
+        credential: DO467 Machine Credentials
+        instance_groups: CH11 Demo Instance Group
+        ask_extra_vars: "yes"
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
