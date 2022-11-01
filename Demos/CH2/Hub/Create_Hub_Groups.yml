@@ -1,0 +1,29 @@
+---
+- name: Create Users Using Ansible Controller Colleciton
+  hosts: localhost
+  vars:
+    ah_hostname: https://hub.lab.example.com
+    ah_username: admin
+    ah_password: redhat
+    ah_validate_certs: false
+
+  tasks:
+
+    - name: Create Groups
+      redhat_cop.ah_configuration.ah_group:
+        name: hub_admins
+        state: present
+        ah_host: "{{ ah_hostname }}"
+        ah_username: "{{ ah_username }}"
+        ah_password: "{{ ah_password }}"
+        validate_certs: "{{ ah_validate_certs }}"
+
+    - name: Ensure group hub_admins has all perms
+      redhat_cop.ah_configuration.ah_group_perm:
+        name: hub_admins
+        state: present
+        perms: "*"
+        ah_host: "{{ ah_hostname }}"
+        ah_username: "{{ ah_username }}"
+        ah_password: "{{ ah_password }}"
+        validate_certs: "{{ ah_validate_certs }}"
