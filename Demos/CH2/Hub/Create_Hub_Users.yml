@@ -2,10 +2,9 @@
 - name: Create Users Using Ansible Controller Colleciton
   hosts: localhost
   vars:
-    ah_hostname: http://hub.lab.example.com:8002/
+    ah_hostname: https://hub.lab.example.com/
     ah_username: admin
     ah_password: redhat
-    ah_path_prefix: 'automation-hub'
     ah_validate_certs: false
   vars_files:
     - hub_users.yml
@@ -22,7 +21,6 @@
         ah_host: "{{ ah_hostname }}"
         ah_username: "{{ ah_username }}"
         ah_password: "{{ ah_password }}"
-        ah_path_prefix: "{{ ah_path_prefix }}"
         validate_certs: "{{ ah_validate_certs }}"
         state: present
       loop: "{{ users }}"
