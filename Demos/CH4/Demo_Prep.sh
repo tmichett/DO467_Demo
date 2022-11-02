@@ -12,7 +12,7 @@ echo "**********************************************"
 echo "***** Creating Controller Resources **********"
 echo "**********************************************"
 
-cd /home/student/Github/DO467_Notes/Demos/CH4
+cd /home/student/Github/DO467_Demos/Demo/CH4
 
 ansible-galaxy collection install -r collections/requirements.yml -p collections/
 
