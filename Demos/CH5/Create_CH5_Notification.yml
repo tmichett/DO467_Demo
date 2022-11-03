@@ -9,8 +9,8 @@
         name: "DO467 CH5 Demo E-mail Notification"
         notification_type: email
         notification_configuration:
-#          username:
-#          password: 
+          username: ""
+          password: ""
           sender: system@controller.lab.example.com 
           recipients:
             - aap-admins@lab.example.com 
