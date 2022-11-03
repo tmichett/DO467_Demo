@@ -16,8 +16,8 @@
             - aap-admins@lab.example.com 
           host: localhost
           port: 25
-          use_ssl: yes
-          use_tls: yes
+          use_ssl: no
+          use_tls: no
         organization: Red Hat Training
         controller_username: admin
         controller_password: redhat
@@ -27,3 +27,4 @@
 
 ## Documentation for Notification Template
 ## https://console.redhat.com/ansible/automation-hub/repo/published/ansible/controller/content/module/notification_template
+## Currently, the module fails as it requires a username and password (even though it isn't required in Automation Controller)
