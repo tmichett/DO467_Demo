@@ -1,0 +1,29 @@
+---
+- name: Create a Notification Template
+  hosts: localhost
+
+  tasks:
+
+    - name: Create Notification Template
+      ansible.controller.notification_template:
+        name: "DO467 CH5 Demo E-mail Notification"
+        notification_type: email
+        notification_configuration:
+#          username:
+#          password: 
+          sender: system@controller.lab.example.com 
+          recipients:
+            - aap-admins@lab.example.com 
+          host: localhost
+          port: 25
+          use_ssl: yes
+          use_tls: yes
+        organization: Red Hat Training
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        state: present
+
+## Documentation for Notification Template
+## https://console.redhat.com/ansible/automation-hub/repo/published/ansible/controller/content/module/notification_template
