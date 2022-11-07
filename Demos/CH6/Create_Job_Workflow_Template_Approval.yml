@@ -8,7 +8,7 @@
 
     - name: Create Job Workflow Template
       ansible.controller.workflow_job_template:
-        name: "CH6 Deploy Web Demo Workflow Job Template"
+        name: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         organization: Red Hat Training
         controller_username: admin
         controller_password: redhat
@@ -21,7 +21,7 @@
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
         identifier: Execute PROD
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         unified_job_template: "CH8 Deploy Web Demo Job Template"
         controller_username: admin
         controller_password: redhat
@@ -34,7 +34,7 @@
     - name: Create Approval to PROD Step
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         identifier: Approve to Prod
         approval_node: 
           description: "Approval to Prod"
@@ -50,7 +50,7 @@
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
         identifier: Execute QA
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         unified_job_template: "CH8 Deploy Web Demo Job Template"
         controller_username: admin
         controller_password: redhat
@@ -65,7 +65,7 @@
     - name: Link Approval Node to Production
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         identifier: Approve to Prod
         controller_username: admin
         controller_password: redhat
@@ -79,7 +79,7 @@
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
         identifier: Execute DEV
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         unified_job_template: "CH8 Deploy Web Demo Job Template"
         controller_username: admin
         controller_password: redhat
@@ -95,7 +95,7 @@
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
         identifier: Synchronize Inventory
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         unified_job_template: "CH8 Demo Inventory Source"
         controller_username: admin
         controller_password: redhat
@@ -109,7 +109,7 @@
       ansible.controller.workflow_job_template_node:
         organization: Red Hat Training
         identifier: Synchronize Project
-        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template"
+        workflow_job_template: "CH6 Deploy Web Demo Workflow Job Template with Approval"
         unified_job_template: "CH8 Demo Project"
         controller_username: admin
         controller_password: redhat

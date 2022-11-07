@@ -15,6 +15,7 @@
         playbook: "hello_world_demo.yml"
         credential: DO467 Machine Credentials
         instance_groups: CH11 Demo Instance Group
+        job_slice_count: 2
         ask_extra_vars: "yes"
         controller_username: admin
         controller_password: redhat
