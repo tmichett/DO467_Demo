@@ -1,0 +1,42 @@
+---
+- name: Chapter 9 - Using AWX
+  hosts: controller
+
+  tasks:
+
+    - name: Obtain Date
+      ansible.builtin.shell: awx-manage check_license --data | jq '.license_date'
+      become: true
+      register: license_date
+
+    - name: Print EPOCH Date
+      debug:
+        var: license_date.stdout
+
+    - name: Obtain  time left
+      ansible.builtin.shell: awx-manage check_license --data | jq '.time_remaining'
+      become: true
+      register: time_remaining
+
+    - name: Print time_remaining
+      debug:
+        var: time_remaining.stdout
+
+    - name: Convert time remaining to dates
+      ansible.builtin.shell: expr {{ time_remaining.stdout }} / 86400
+      register: days_remaining
+
+    - name: Dump Days remaining
+      debug:
+        var: days_remaining
+
+    - name: Convert EPOCH into DATE/Time format
+      ansible.builtin.shell: date -d @{{ license_date.stdout }}
+      register: license_end_date
+
+    - debug:
+        var: license_end_date
+
+    - name: Print License Days Remaining and License End Date in Local Time.
+      debug:
+        msg: There are {{ days_remaining.stdout }} for your AAP Controller License. The current license expires on {{ license_end_date.stdout }}.
