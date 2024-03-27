@@ -5,11 +5,11 @@
     automation_controller_user: admin
     automation_controller_pass: redhat
     automation_controller_host: controller.lab.example.com
-    automation_controller_job: "{{ 'DO467 Demo Job - Testing Inventory' | urlencode }}"
+    automation_controller_job: "{{ 'DO467 Demo Job - Testing Inventory' }}"
   tasks:
     - name: Launch the DO467 Demo Job - Testing Inventory Job
       uri:
-        url: https://{{ automation_controller_host }}/api/v2/job_templates/{{ automation_controller_job }}/launch/
+        url: https://{{ automation_controller_host }}/api/v2/job_templates/{{ automation_controller_job | urlencode }}/launch/
         method: POST
         validate_certs: no
         return_content: yes
