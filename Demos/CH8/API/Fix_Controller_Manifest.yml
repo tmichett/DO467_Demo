@@ -1,0 +1,19 @@
+# Playbook create and written by: Travis Michette
+# Playbook tested on RHCI Foundation 8,8.1,8.2, 8.5
+# Contact information: tmichett@redhat.com
+---
+- name: Update Manifest on Automation Controller
+  hosts: localhost
+  vars:
+    ws_gdm_dirs:
+      - /var/lib/gdm/.cache
+      - /home/student/.cache
+
+  tasks:
+    - name: Apply New Manifest  ## Note the manifest must be copied into the files directory
+      ansible.controller.license:
+        controller_username: admin
+        controller_password: redhat
+        controller_host: https://controller.lab.example.com
+        validate_certs: false
+        manifest: "files/manifest.zip"

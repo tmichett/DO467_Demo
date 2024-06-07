@@ -1,0 +1,17 @@
+API Snippet for License
+
+[source,yaml]
+----
+- name: Upload license manifest to Automation Controller
+  uri:
+    url: "https://controller.lab.example.com/api/v2/license/"
+    method: POST
+    headers:
+      Content-Type: "application/json"
+      Authorization: "Bearer your_api_token"
+    body: 
+      license_file: "files/manifest.zip"
+  register: license_upload_result
+----
+
+
